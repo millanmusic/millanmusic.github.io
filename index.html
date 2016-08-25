@@ -2,12 +2,17 @@
 <html class="no-js" lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="js/vendors/jquery.easings.min.js"></script>
+    <script type="text/javascript" src="js/vendors/scrolloverflow.min.js"></script>
+    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
     <meta http-equiv="x-ua-compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foundation for Sites</title>
+    <title>Millan Music Lessons</title>
     <link rel="stylesheet" href="css/foundation.css">
     <link rel="stylesheet" href="css/app.css">
-
+    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
 <head>
 
 <!-- title and meta -->
@@ -40,6 +45,76 @@
     }
     window.onload = init();
 </script>
+<script>
+$(document).ready(function() {
+    $('#fullpage').fullpage({
+        //Navigation
+        menu: '#menu',
+        lockAnchors: false,
+        anchors:['firstPage', 'secondPage'],
+        navigation: false,
+        navigationPosition: 'right',
+        navigationTooltips: ['firstSlide', 'secondSlide'],
+        showActiveTooltip: true,
+        slidesNavigation: false,
+        slidesNavPosition: 'bottom',
+
+        //Scrolling
+        css3: true,
+        scrollingSpeed: 700,
+        autoScrolling: true,
+        fitToSection: true,
+        fitToSectionDelay: 1000,
+        scrollBar: false,
+        easing: 'easeInOutCubic',
+        easingcss3: 'ease',
+        loopBottom: false,
+        loopTop: false,
+        loopHorizontal: true,
+        continuousVertical: false,
+        continuousHorizontal: false,
+        scrollHorizontally: true,
+        interlockedSlides: false,
+        resetSliders: false,
+        normalScrollElements: '#element1, .element2',
+        scrollOverflow: false,
+        scrollOverflowOptions: null,
+        touchSensitivity: 15,
+        normalScrollElementTouchThreshold: 5,
+        bigSectionsDestination: null,
+
+        //Accessibility
+        keyboardScrolling: true,
+        animateAnchor: true,
+        recordHistory: true,
+
+        //Design
+        controlArrows: false,
+        verticalCentered: true,
+        sectionsColor : ['#ccc', '#fff'],
+        paddingTop: '3em',
+        paddingBottom: '10px',
+        fixedElements: '#header, .footer',
+        responsiveWidth: 0,
+        responsiveHeight: 0,
+
+        //Custom selectors
+        sectionSelector: '.section',
+        slideSelector: '.slide',
+
+        //events
+        onLeave: function(index, nextIndex, direction){},
+        afterLoad: function(anchorLink, index){},
+        afterRender: function(){},
+        afterResize: function(){},
+        afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex){
+      $('.nav__item.active').removeClass('active');
+      $('.nav__item').eq(slideIndex).addClass('active');
+    },
+        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+    });
+});
+</script>
 </head>
 
 
@@ -54,67 +129,66 @@
             Millan Music
         </h1>
         <nav>
-            <a href="">Home</a>
-            <a href="">Instructors</a>
-            <a href="">Calendar</a>
-            <a href="">Competition</a>
-            <a href="">Contact</a>
+        <ul>
+        <a class="nav__item active" href="#firstPage/0">Home</a>
+        <a class="nav__item" href="#firstPage/1">Instructors</a>
+        <a class="nav__item" href="#firstPage/2">Calendar</a>
+        <a class="nav__item" href="#firstPage/3">Competition</a>
+        <a class="nav__item" href="#firstPage/4">Contact</a>
+        </ul>
         </nav>
     </div>
 </header><!-- /header -->
-
-<div id="main">
-    <div id="content">
-        <section>
-            <div class="container">
-                <h1>Header Resize On Scroll with Animations</h1>
-                <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert. Cupcake pastry tart sesame snaps lollipop donut pie. Cookie apple pie toffee lemon drops jelly beans cheesecake sweet roll. Jelly-o soufflé donut candy canes wafer dragée sweet cheesecake. Macaroon caramels pie cookie gummi bears. Ice cream jelly-o toffee cookie gingerbread cookie. Soufflé fruitcake jelly-o jelly chupa chups jelly beans. Dragée marzipan pastry macaroon oat cake muffin soufflé topping liquorice. Jelly-o chocolate cake lollipop.</p>
-                <p>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon candy marzipan bonbon gummies chocolate cake gummi bears powder. Unerdwear.com tart halvah chocolate cake dragée liquorice. Sugar plum chocolate bar pastry liquorice dragée jelly powder. Jelly tootsie roll applicake caramels. Marzipan candy tootsie roll donut. Gummies ice cream macaroon applicake.</p>
-                <p>
-                    <a href="http://www.callmenick.com/tutorials/create-an-animated-resizing-header-on-scroll">&laquo; Go back to this tutorial?</a><br>
-                    <a href="http://www.callmenick.com/tutorials">&laquo; Go back to all tutorials?</a>
-                </p>
+<div id="fullpage">
+    <div class="section active">
+        <div class="slide" id="section1">
+            <div class="intro" data-anchor="slide1">
+                <h1>Millan Music</h1>
+                <p>A fun and energetic environment for students to learn and develop their musical talent</p>
             </div>
-        </section>
-        <section class="color">
-            <div class="container">
-                <h1>Cupcakes for the people!</h1>
-                <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert. Cupcake pastry tart sesame snaps lollipop donut pie. Cookie apple pie toffee lemon drops jelly beans cheesecake sweet roll. Jelly-o soufflé donut candy canes wafer dragée sweet cheesecake. Macaroon caramels pie cookie gummi bears. Ice cream jelly-o toffee cookie gingerbread cookie. Soufflé fruitcake jelly-o jelly chupa chups jelly beans. Dragée marzipan pastry macaroon oat cake muffin soufflé topping liquorice. Jelly-o chocolate cake lollipop.</p>
-                <p>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon candy marzipan bonbon gummies chocolate cake gummi bears powder. Unerdwear.com tart halvah chocolate cake dragée liquorice. Sugar plum chocolate bar pastry liquorice dragée jelly powder. Jelly tootsie roll applicake caramels. Marzipan candy tootsie roll donut. Gummies ice cream macaroon applicake.</p>
+        </div>
+        <div class="slide" id="section2">
+            <div class="intro" data-anchor="slide2">
+                <h1>Instructors</h1>
+                <p>Easy to use. Configurable and customizable.</p>
             </div>
-        </section>
-        <section>
-            <div class="container">
-                <h1>Chocolate, vanilla, and red velvet</h1>
-                <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert. Cupcake pastry tart sesame snaps lollipop donut pie. Cookie apple pie toffee lemon drops jelly beans cheesecake sweet roll. Jelly-o soufflé donut candy canes wafer dragée sweet cheesecake. Macaroon caramels pie cookie gummi bears. Ice cream jelly-o toffee cookie gingerbread cookie. Soufflé fruitcake jelly-o jelly chupa chups jelly beans. Dragée marzipan pastry macaroon oat cake muffin soufflé topping liquorice. Jelly-o chocolate cake lollipop.</p>
-                <p>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon candy marzipan bonbon gummies chocolate cake gummi bears powder. Unerdwear.com tart halvah chocolate cake dragée liquorice. Sugar plum chocolate bar pastry liquorice dragée jelly powder. Jelly tootsie roll applicake caramels. Marzipan candy tootsie roll donut. Gummies ice cream macaroon applicake.</p>
+        </div>
+        <div class="slide" id="section3">
+            <div class="intro" data-anchor="slide3">
+                <h1>Calendar</h1>
+                <p>Dates and stuff</p>
             </div>
-        </section>
-        <section class="color">
-            <div class="container">
-                <h1>Come to me!</h1>
-                <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert. Cupcake pastry tart sesame snaps lollipop donut pie. Cookie apple pie toffee lemon drops jelly beans cheesecake sweet roll. Jelly-o soufflé donut candy canes wafer dragée sweet cheesecake. Macaroon caramels pie cookie gummi bears. Ice cream jelly-o toffee cookie gingerbread cookie. Soufflé fruitcake jelly-o jelly chupa chups jelly beans. Dragée marzipan pastry macaroon oat cake muffin soufflé topping liquorice. Jelly-o chocolate cake lollipop.</p>
-                <p>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon candy marzipan bonbon gummies chocolate cake gummi bears powder. Unerdwear.com tart halvah chocolate cake dragée liquorice. Sugar plum chocolate bar pastry liquorice dragée jelly powder. Jelly tootsie roll applicake caramels. Marzipan candy tootsie roll donut. Gummies ice cream macaroon applicake.</p>
+        </div>
+        <div class="slide" id="section4">
+            <div class="intro" data-anchor="slide4">
+                <h1>Competition</h1>
+                <p>Hello Holla acho boy!</p>
             </div>
-        </section>
-        <section>
-            <div class="container">
-                <h1>Sugar rush, oh my...</h1>
-                <p>Cupcake ipsum dolor sit amet lollipop. Macaroon candy cotton candy bear claw macaroon carrot cake pastry icing dessert. Cupcake pastry tart sesame snaps lollipop donut pie. Cookie apple pie toffee lemon drops jelly beans cheesecake sweet roll. Jelly-o soufflé donut candy canes wafer dragée sweet cheesecake. Macaroon caramels pie cookie gummi bears. Ice cream jelly-o toffee cookie gingerbread cookie. Soufflé fruitcake jelly-o jelly chupa chups jelly beans. Dragée marzipan pastry macaroon oat cake muffin soufflé topping liquorice. Jelly-o chocolate cake lollipop.</p>
-                <p>Sugar plum muffin cookie pastry oat cake icing candy canes chocolate. Gummi bears chupa chups fruitcake dessert jelly. Muffin cookie ice cream soufflé pastry lollipop gingerbread sweet. Unerdwear.com bonbon candy marzipan bonbon gummies chocolate cake gummi bears powder. Unerdwear.com tart halvah chocolate cake dragée liquorice. Sugar plum chocolate bar pastry liquorice dragée jelly powder. Jelly tootsie roll applicake caramels. Marzipan candy tootsie roll donut. Gummies ice cream macaroon applicake.</p>
+        </div>
+        <div class="slide" id="section5">
+            <div class="intro" data-anchor="slide5">
+                <h1>Contact</h1>
+                <p></br>(310) 522-9932</br></br>
+1330 E 223rd St Suite 524</br>
+Carson, CA 90745</br></br>
+                <u>Business Hours</u></br>
+                <table>
+                <tr>
+                <th>Monday - Friday</th><th>3:00PM - 9:00PM</th></tr>
+                <tr>
+                <th>Saturday</th><th>8:00AM - 4:00PM</th></tr>
+                <tr>
+                <th>Sunday </th><th> Closed</th>
+                </table></br>
+</p>
             </div>
-        </section>
+        </div>
     </div>
-</div><!-- #main -->
+</div>
+
 
 
 <footer>
-<div id="info-bar">
-    <div class="container clearfix">
-        <span class="all-tutorials"><a href="http://www.callmenick.com/tutorials">&larr; all tutorials</a></span>
-        <span class="back-to-tutorial"><a href="http://www.callmenick.com/tutorials/create-an-animated-resizing-header-on-scroll">back to the tutorial</a></span>
-    </div>
-</div><!-- /#top-bar -->
 </footer><!-- /footer -->
 
 
