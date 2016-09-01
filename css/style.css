@@ -152,6 +152,7 @@ header {
   left: 0;
   z-index: 999;
   background-color: rgba(255,255,255,0.95);
+  transition: top 0.2s ease-in-out;
   -webkit-transition: height 0.3s;
   -moz-transition: height 0.3s;
   -ms-transition: height 0.3s;
@@ -197,6 +198,10 @@ header {
       font-size: 35px; }
     header.smaller nav a {
       line-height: 75px; }
+
+ .nav-up {
+  top: -60px;
+ }     
 .intro {
   margin:  0 auto;
   width:  80%;
@@ -204,7 +209,7 @@ header {
 .section h1 {
    font-family: "Mistral", sans-serif;
    color:  white;
-   margin-top: 10%;
+   margin-top: 100px;
    font-size:  7em;
    text-shadow:  2px 2px black;
 }

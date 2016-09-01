@@ -108,10 +108,50 @@
             });
             });
             </script>
+
+        <script>
+        var didScroll;
+var lastScrollTop = 0;
+var delta = 5;
+var navbarHeight = $('header').outerHeight();
+
+$(window).scroll(function(event){
+    didScroll = true;
+});
+
+setInterval(function() {
+    if (didScroll) {
+        hasScrolled();
+        didScroll = false;
+    }
+}, 250);
+
+function hasScrolled() {
+    var st = $('section').scrollTop();
+    
+    // Make sure they scroll more than delta
+    if(Math.abs(lastScrollTop - st) <= delta)
+        return;
+    
+    // If they scrolled down and are past the navbar, add class .nav-up.
+    // This is necessary so you never see what is "behind" the navbar.
+    if (st > lastScrollTop && st > navbarHeight){
+        // Scroll Down
+        $('header').removeClass('nav-down').addClass('nav-up');
+    } else {
+        // Scroll Up
+        if(st + $(window).height() < $(document).height()) {
+            $('header').removeClass('nav-up').addClass('nav-down');
+        }
+    }
+    
+    lastScrollTop = st;
+}
+        </script>
         </head>
         <body>
             <div id="wrapper">
-                <header>
+                <header class="nav-down">
                     <div class="container clearfix">
                         <h1 id="logo">
                         Millan Music
@@ -156,18 +196,11 @@
                                         </div>
                                         </div>
                                     </div>
-                                      <p style="text-align: center;"></br></br></br></br></br> We offer 30 minute one-on-one lessons for students ages 5 to 99 years old. </br>
-                                            $25.00 per lesson or at a discount rate of $20 per lesson if the entire month
-                                            is paid by the 1st week (restrictions apply). </br> We accept cash or check only.Three waiting rooms (two with a TV), a playroom (complete with
+                                      <p style="text-align: center;"></br></br>  <b>$20 - $25 Per Lesson</b></br><b>30 Minute One-on-One Lessons</b></br> <b>Ages 5 to 99 Years Old</b> </br>
+                                           </br> We accept cash or check only.</br>Three waiting rooms (two with a TV), a playroom (complete with
                                         toys) and free coffee, cappuccino, hot chocolate and tea.</p>
-                                          <p style="text-align: center;"></br></br></br></br></br> We offer 30 minute one-on-one lessons for students ages 5 to 99 years old. </br>
-                                            $25.00 per lesson or at a discount rate of $20 per lesson if the entire month
-                                            is paid by the 1st week (restrictions apply). </br> We accept cash or check only.Three waiting rooms (two with a TV), a playroom (complete with
-                                        toys) and free coffee, cappuccino, hot chocolate and tea.</p>
-                                          <p style="text-align: center;"></br></br></br></br></br> We offer 30 minute one-on-one lessons for students ages 5 to 99 years old. </br>
-                                            $25.00 per lesson or at a discount rate of $20 per lesson if the entire month
-                                            is paid by the 1st week (restrictions apply). </br> We accept cash or check only.Three waiting rooms (two with a TV), a playroom (complete with
-                                        toys) and free coffee, cappuccino, hot chocolate and tea.</p>
+
+
 
                                 </div>
                                 <div class="slide" id="section2">
