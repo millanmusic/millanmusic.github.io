@@ -1,193 +1,215 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-    <script src="js/vendors/jquery.easings.min.js"></script>
-    <script type="text/javascript" src="js/vendors/scrolloverflow.min.js"></script>
-    <script type="text/javascript" src="js/jquery.fullPage.js"></script>
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Millan Music Lessons</title>
-    <link rel="stylesheet" href="css/foundation.css">
-    <link rel="stylesheet" href="css/app.css">
-    <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
-<head>
-
-<!-- title and meta -->
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1.0" />
-<meta name="description" content="" />
-<title>Header Resize On Scroll with Animations</title>
-    
-<!-- css -->
-<link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
-<link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="css/style.css" />
-    
-<!-- js -->
-<script src="js/classie.js"></script>
-<script>
-    function init() {
-        window.addEventListener('scroll', function(e){
+    <head>
+        <meta charset="utf-8">
+        <script src="https://use.fontawesome.com/60f1d0daee.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="js/vendors/jquery.easings.min.js"></script>
+        <script type="text/javascript" src="js/vendors/scrolloverflow.min.js"></script>
+        <script type="text/javascript" src="js/jquery.fullPage.js"></script>
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Millan Music Lessons</title>
+        <link rel="stylesheet" href="css/foundation.css">
+        <link rel="stylesheet" href="css/app.css">
+        <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+        <head>
+            <!-- title and meta -->
+            <meta charset="utf-8" />
+            <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+            <meta name="description" content="" />
+            <title>Header Resize On Scroll with Animations</title>
+            
+            <!-- css -->
+            <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
+            <link href='http://fonts.googleapis.com/css?family=Oswald:400,300,700' rel='stylesheet' type='text/css'>
+            <link rel="stylesheet" href="css/style.css" />
+            
+            <!-- js -->
+            <script src="js/classie.js"></script>
+            <script>
+            function init() {
+            window.addEventListener('scroll', function(e){
             var distanceY = window.pageYOffset || document.documentElement.scrollTop,
-                shrinkOn = 300,
-                header = document.querySelector("header");
+            shrinkOn = 300,
+            header = document.querySelector("header");
             if (distanceY > shrinkOn) {
-                classie.add(header,"smaller");
+            classie.add(header,"smaller");
             } else {
-                if (classie.has(header,"smaller")) {
-                    classie.remove(header,"smaller");
-                }
+            if (classie.has(header,"smaller")) {
+            classie.remove(header,"smaller");
             }
-        });
-    }
-    window.onload = init();
-</script>
-<script>
-$(document).ready(function() {
-    $('#fullpage').fullpage({
-        //Navigation
-        menu: '#menu',
-        lockAnchors: false,
-        anchors:['firstPage', 'secondPage'],
-        navigation: false,
-        navigationPosition: 'right',
-        navigationTooltips: ['firstSlide', 'secondSlide'],
-        showActiveTooltip: true,
-        slidesNavigation: false,
-        slidesNavPosition: 'bottom',
+            }
+            });
+            }
+            window.onload = init();
+            </script>
+            <script>
+            $(document).ready(function() {
+            $('#fullpage').fullpage({
+            //Navigation
+            menu: '#menu',
+            lockAnchors: false,
+            anchors:['firstPage', 'secondPage'],
+            navigation: false,
+            navigationPosition: 'right',
+            navigationTooltips: ['firstSlide', 'secondSlide'],
+            showActiveTooltip: true,
+            slidesNavigation: false,
+            slidesNavPosition: 'bottom',
+            //Scrolling
+            css3: true,
+            scrollingSpeed: 700,
+            autoScrolling: true,
+            fitToSection: true,
+            fitToSectionDelay: 1000,
+            scrollBar: true,
+            easing: 'easeInOutCubic',
+            easingcss3: 'ease',
+            loopBottom: false,
+            loopTop: false,
+            loopHorizontal: true,
+            continuousVertical: true,
+            continuousHorizontal: false,
+            scrollHorizontally: true,
+            interlockedSlides: false,
+            resetSliders: false,
+            normalScrollElements: '#element1, .element2',
+            scrollOverflow: true,
+            scrollOverflowOptions: null,
+            touchSensitivity: 15,
+            normalScrollElementTouchThreshold: 5,
+            bigSectionsDestination: null,
+            //Accessibility
+            keyboardScrolling: false,
+            animateAnchor: true,
+            recordHistory: true,
+            //Design
+            controlArrows: false,
+            verticalCentered: true,
+            sectionsColor : ['#ccc', '#fff'],
+            paddingTop: '3em',
+            fixedElements: '#header, .footer',
+            responsiveWidth: 0,
+            responsiveHeight: 0,
+            //Custom selectors
+            sectionSelector: '.section',
+            slideSelector: '.slide',
+            //events
+            onLeave: function(index, nextIndex, direction){},
+            afterLoad: function(anchorLink, index){},
+            afterRender: function(){},
+            afterResize: function(){},
+            afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex){
+            $('.nav__item.active').removeClass('active');
+            $('.nav__item').eq(slideIndex).addClass('active');
+            },
+            onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
+            });
+            });
+            </script>
+        </head>
+        <body>
+            <div id="wrapper">
+                <header>
+                    <div class="container clearfix">
+                        <h1 id="logo">
+                        Millan Music
+                        </h1>
+                        <nav>
+                            <ul>
+                                <a class="nav__item active" href="#firstPage/0">Home</a>
+                                <a class="nav__item" href="#firstPage/1">Instructors</a>
+                                <a class="nav__item" href="#firstPage/2">Calendar</a>
+                                <a class="nav__item" href="#firstPage/3">Competition</a>
+                                <a class="nav__item" href="#firstPage/4">Contact</a>
+                            </ul>
+                        </nav>
+                    </div>
+                    </header><!-- /header -->
+                    <div id="fullpage">
+                        <div class="section active">
+                            <div class="slide" id="section1">
+                                <div class="intro" data-anchor="slide1">
+                                    <h1>Millan Music</h1>
+                                    <p>A fun and energetic environment for students to learn and develop their musical talent!</br></br></p>
+                                        
+                                    
+                                    <div class="row">
+                                        <div class="large-4 medium-4 columns">
+                                            <div class="circle">
+                                            <i class="fa fa-users"></i>
+                                            <p>Over 300 Enrolled Students</p>
+                                            </div>
+                                        </div>
 
-        //Scrolling
-        css3: true,
-        scrollingSpeed: 700,
-        autoScrolling: true,
-        fitToSection: true,
-        fitToSectionDelay: 1000,
-        scrollBar: false,
-        easing: 'easeInOutCubic',
-        easingcss3: 'ease',
-        loopBottom: false,
-        loopTop: false,
-        loopHorizontal: true,
-        continuousVertical: false,
-        continuousHorizontal: false,
-        scrollHorizontally: true,
-        interlockedSlides: false,
-        resetSliders: false,
-        normalScrollElements: '#element1, .element2',
-        scrollOverflow: false,
-        scrollOverflowOptions: null,
-        touchSensitivity: 15,
-        normalScrollElementTouchThreshold: 5,
-        bigSectionsDestination: null,
+                                        <div class="large-4 medium-4 columns">
+                                         <div class="circle">
+                                            <i class="fa fa-exchange"></i>
+                                            <p>13 Rooms for Music Instruction</p>
+                                            </div>
+                                        </div>
+                                        <div class="large-4 medium-4 columns">
+                                        <div class="circle">
+                                        <i class="fa fa-music"></i>
+                                            <p>10 Instruments to Choose From</p>
+                                        </div>
+                                        </div>
+                                    </div>
+                                      <p style="text-align: center;"></br></br></br></br></br> We offer 30 minute one-on-one lessons for students ages 5 to 99 years old. </br>
+                                            $25.00 per lesson or at a discount rate of $20 per lesson if the entire month
+                                            is paid by the 1st week (restrictions apply). </br> We accept cash or check only.Three waiting rooms (two with a TV), a playroom (complete with
+                                        toys) and free coffee, cappuccino, hot chocolate and tea.</p>
+                                          <p style="text-align: center;"></br></br></br></br></br> We offer 30 minute one-on-one lessons for students ages 5 to 99 years old. </br>
+                                            $25.00 per lesson or at a discount rate of $20 per lesson if the entire month
+                                            is paid by the 1st week (restrictions apply). </br> We accept cash or check only.Three waiting rooms (two with a TV), a playroom (complete with
+                                        toys) and free coffee, cappuccino, hot chocolate and tea.</p>
+                                          <p style="text-align: center;"></br></br></br></br></br> We offer 30 minute one-on-one lessons for students ages 5 to 99 years old. </br>
+                                            $25.00 per lesson or at a discount rate of $20 per lesson if the entire month
+                                            is paid by the 1st week (restrictions apply). </br> We accept cash or check only.Three waiting rooms (two with a TV), a playroom (complete with
+                                        toys) and free coffee, cappuccino, hot chocolate and tea.</p>
 
-        //Accessibility
-        keyboardScrolling: false,
-        animateAnchor: true,
-        recordHistory: true,
-
-        //Design
-        controlArrows: false,
-        verticalCentered: true,
-        sectionsColor : ['#ccc', '#fff'],
-        paddingTop: '3em',
-        fixedElements: '#header, .footer',
-        responsiveWidth: 0,
-        responsiveHeight: 0,
-
-        //Custom selectors
-        sectionSelector: '.section',
-        slideSelector: '.slide',
-
-        //events
-        onLeave: function(index, nextIndex, direction){},
-        afterLoad: function(anchorLink, index){},
-        afterRender: function(){},
-        afterResize: function(){},
-        afterSlideLoad: function( anchorLink, index, slideAnchor, slideIndex){
-      $('.nav__item.active').removeClass('active');
-      $('.nav__item').eq(slideIndex).addClass('active');
-    },
-        onSlideLeave: function(anchorLink, index, slideIndex, direction, nextSlideIndex){}
-    });
-});
-</script>
-</head>
-
-
-
-<body>
-
-<div id="wrapper">
-
-<header>
-    <div class="container clearfix">
-        <h1 id="logo">
-            Millan Music
-        </h1>
-        <nav>
-        <ul>
-        <a class="nav__item active" href="#firstPage/0">Home</a>
-        <a class="nav__item" href="#firstPage/1">Instructors</a>
-        <a class="nav__item" href="#firstPage/2">Calendar</a>
-        <a class="nav__item" href="#firstPage/3">Competition</a>
-        <a class="nav__item" href="#firstPage/4">Contact</a>
-        </ul>
-        </nav>
-    </div>
-</header><!-- /header -->
-<div id="fullpage">
-    <div class="section active">
-        <div class="slide" id="section1">
-            <div class="intro" data-anchor="slide1">
-                <h1>Millan Music</h1>
-                <p>A fun and energetic environment for students to learn and develop their musical talent</p>
-            </div>
-        </div>
-        <div class="slide" id="section2">
-            <div class="intro" data-anchor="slide2">
-                <h1>Instructors</h1>
-                <p>Our patient and talented instructors are here to help the student every step of the way.</p>
-            </div>
-        </div>
-        <div class="slide" id="section3">
-            <div class="intro" data-anchor="slide3">
-                <h1>Calendar</h1>
-                <p>Dates and stuff</p>
-            </div>
-        </div>
-        <div class="slide" id="section4">
-            <div class="intro" data-anchor="slide4">
-                <h1>Competition</h1>
-                <p>Information about future competitions will be listed here</p>
-            </div>
-        </div>
-        <div class="slide" id="section5">
-            <div class="intro" data-anchor="slide5">
-               <h1>Contact</h1>
-                <p></br>(310) 522-9932</br></br>
-1330 E 223rd St Suite 524</br>
-Carson, CA 90745</br></br></p>
-                <div class="row">
-                <div class="small-6 large-offset-3 large-2 columns">
-                <p>Monday - Friday</p>
-                <p>Saturday</p>
-                <p>Sunday</p>
-                </div>
-                <div class="small-6 large-7 columns">
-                <p>3:00PM - 9:00PM</p>
-                <p>8:00AM - 4:00PM</p>
-                <p>Closed</p>
-                </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-</div><!-- /#wrapper -->
-
-
-</body>
-</html>
+                                </div>
+                                <div class="slide" id="section2">
+                                    <div class="intro" data-anchor="slide2">
+                                        <h1>Instructors</h1>
+                                        <p>Our patient and talented instructors are here to help the student every step of the way.</p>
+                                    </div>
+                                </div>
+                                <div class="slide" id="section3">
+                                    <div class="intro" data-anchor="slide3">
+                                        <h1>Calendar</h1>
+                                        <p>Dates and stuff</p>
+                                    </div>
+                                </div>
+                                <div class="slide" id="section4">
+                                    <div class="intro" data-anchor="slide4">
+                                        <h1>Competition</h1>
+                                        <p>Information about future competitions will be listed here</p>
+                                    </div>
+                                </div>
+                                <div class="slide" id="section5">
+                                    <div class="intro" data-anchor="slide5">
+                                        <h1>Contact</h1>
+                                        <p></br>(310) 522-9932</br></br>
+                                            1330 E 223rd St Suite 524</br>
+                                        Carson, CA 90745</br></br></p>
+                                        <div class="row">
+                                            <div class="small-6 large-offset-3 large-2 columns">
+                                                <p>Monday - Friday</p>
+                                                <p>Saturday</p>
+                                                <p>Sunday</p>
+                                            </div>
+                                            <div class="small-6 large-7 columns">
+                                                <p>3:00PM - 9:00PM</p>
+                                                <p>8:00AM - 4:00PM</p>
+                                                <p>Closed</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        </div><!-- /#wrapper -->
+                    </body>
+                </html>
