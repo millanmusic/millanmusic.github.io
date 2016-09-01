@@ -103,7 +103,8 @@ section {
     margin-bottom: 10px; 
   text-align: center;}
   section p {
-    margin-bottom: 30px; }
+    margin-bottom: 30px; 
+    padding-bottom: 0px;}
     section p:last-child {
       margin-bottom: 0; }
   section.color {
