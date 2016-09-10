@@ -99,7 +99,7 @@ section {
   padding: 60px 0; 
   text-align: center;}
   section h1 {
-    margin-top: 500px;
+    margin-top: 300px;
     font-weight: 700;
     margin-bottom: 10px; 
   text-align: center;}
@@ -153,6 +153,7 @@ header {
   z-index: 999;
   background-color: rgba(255,255,255,0.95);
   transition: top 0.2s ease-in-out;
+      box-shadow: 0px 5px 5px #888888;
   -webkit-transition: height 0.3s;
   -moz-transition: height 0.3s;
   -ms-transition: height 0.3s;
@@ -162,7 +163,7 @@ header {
     display: inline-block;
     float: left;
     font-family: "Mistral", sans-serif;
-    font-size: 50px;
+    font-size: 40px;
     margin-top:  10px;
     color: black;
     font-weight: 400;
@@ -172,6 +173,10 @@ header {
     -ms-transition: all 0.3s;
     -o-transition: all 0.3s;
     transition: all 0.3s; }
+  header h1#logo:hover {
+    text-shadow:  5px 1px #DCDCDC;
+    cursor: initial;
+  }
   header nav {
     display: inline-block;
     float: right; }
@@ -187,17 +192,8 @@ header {
       -o-transition: all 0.3s;
       transition: all 0.3s; }
       header nav a:hover {
-        color: black; }
-  header.smaller {
-    height: 75px; 
-    box-shadow: 0 3px 2px -2px #D3D3D3;}
-    header.smaller h1#logo {
-      width: 300px;
-      height: 75px;
-      line-height: 75px;
-      font-size: 35px; }
-    header.smaller nav a {
-      line-height: 75px; }
+        color: black; 
+      }
 
  .nav-up {
   top: -60px;
@@ -208,8 +204,8 @@ header {
 }
 .section h1 {
    font-family: "Mistral", sans-serif;
-   color:  white;
-   margin-top: 100px;
+   color:  rgba(255,255,255,0.95);
+   margin-top: 20px;
    font-size:  7em;
    text-shadow:  2px 2px black;
 }
@@ -221,19 +217,19 @@ header {
 #section1 {
   background-size: cover;
   z-index: 980;
-  background-image: url(../img/1.JPG);
+  background-image: url(../img/4.JPG);
   filter:blur(2px);
 }
 #section2 {
   background-size: cover;
   z-index: 981;
-  background-image: url(../img/2.JPG);
+  background-image: url(../img/1.JPG);
   filter:blur(2px);
 }
 #section3 {
   background-size: cover;
   z-index: 982;
-  background-image: url(../img/3.JPG);
+  background-image: url(../img/2.JPG);
   filter:blur(2px);
 }
 
@@ -246,37 +242,10 @@ header {
 #section5 {
   background-size: cover;
   z-index: 984;
-  background-image: url(../img/4.JPG);
+  background-image: url(../img/3.JPG);
   filter:blur(2px);
 }
 
-/*Hours table*/
-table {
-  width: 50%;
-  margin: 0 auto;
-    border-collapse: collapse;
-    background-color: rgba(0, 0, 0, 0);
-    color:  white;
-  font-size: 1.5em;
-  text-shadow:  1px 1px black;
-
-}
-
-table tbody {
-  border:  none;
-  background-color: rgba(0, 0, 0, 0);
-}
-table tbody tr:nth-child(even) {
-    background-color: rgba(0, 0, 0, 0);
-}
-table tr:nth-child(odd) {
-    background-color: rgba(0, 0, 0, 0);
-}
-table th {
-    color: white;
-    font-size: 12px;
-    background-color: rgba(0, 0, 0, 0);
-}
 
 .row .fa{
   margin:  0 auto;
@@ -286,6 +255,12 @@ table th {
   text-shadow:  1px 1px black;
 }
 
+.contact .fa {
+  color:  white;
+  font-size:  30px;
+  text-shadow:  1px 1px black;
+
+}
 .large-4 {
   text-align:  center;
   margin: 0 auto;
@@ -300,6 +275,15 @@ table th {
     border: 5px solid white ;
 }
 
+.pro-circle {
+  width:150px;
+  height:  150px;
+  float:  left;
+    background: rgba(0,0,0,0.8);
+    border: 5px solid white ;
+}
+
+
 .circle i {
   padding-top: 50px;
 }
@@ -307,13 +291,51 @@ table th {
 .columns {
   text-align:  center;
 }
-/* =Calendar 
+/* Instructors
+-------------------------------------------------------------- */
+.post-container {
+    margin: 20px 20px 0 0;  
+    border: 5px solid #333;
+    overflow: auto
+}
+.post-thumb {
+    float: left
+}
+.post-thumb img {
+    display: block
+}
+.post-content {
+    margin-left: 210px
+}
+.post-title {
+    font-weight: bold;
+    font-size: 200%
+}
+
+
+
+/* Calendar 
 -------------------------------------------------------------- */
 #calendar {
     max-width: 900px;
-    height: 500px;
     margin: 0 auto;
   }
+
+#calendar h2 {
+      font-family: "Mistral", sans-serif;
+      font-size:  3em;
+  color:  white;
+    text-shadow:  1px 1px black;
+
+}
+
+table tbody {
+  background-color:rgba(254,254,254,0.6);
+}
+
+td.fc-day-top.fc-thu-.fc-past {
+  background-color: rgba(254,254,254,0.6);
+}
 /* =Footer
 -------------------------------------------------------------- */
 /* =Extras

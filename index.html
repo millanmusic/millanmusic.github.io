@@ -1,7 +1,11 @@
 <!DOCTYPE html>
 <html class="no-js" lang="en" dir="ltr">
     <head>
-        <meta charset="utf-8">
+         <!-- title and meta -->
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+        <title>Millan Music Lessons</title>
+
         <script src="https://use.fontawesome.com/60f1d0daee.js"></script>
         <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
         <script src="js/vendors/jquery.easings.min.js"></script>
@@ -9,16 +13,15 @@
         <script type="text/javascript" src="js/jquery.fullPage.js"></script>
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Millan Music Lessons</title>
         <link rel="stylesheet" href="css/foundation.css">
         <link rel="stylesheet" href="css/app.css">
         <link rel="stylesheet" type="text/css" href="css/jquery.fullPage.css" />
+        <link href='css/fullcalendar.css' rel='stylesheet' />
+        <link href='css/fullcalendar.print.css' rel='stylesheet' media='print' />
+        <script src='js/moment.min.js'></script>
+        <script src='js/fullcalendar.min.js'></script>
+        <script src='js/gcal.js'></script>
         <head>
-            <!-- title and meta -->
-            <meta charset="utf-8" />
-            <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-            <meta name="description" content="" />
-            <title>Header Resize On Scroll with Animations</title>
             
             <!-- css -->
             <link href='http://fonts.googleapis.com/css?family=Ubuntu:300,400,700,400italic' rel='stylesheet' type='text/css'>
@@ -108,47 +111,77 @@
             });
             });
             </script>
-
-        <script>
-        var didScroll;
-var lastScrollTop = 0;
-var delta = 5;
-var navbarHeight = $('header').outerHeight();
-
-$(window).scroll(function(event){
-    didScroll = true;
-});
-
-setInterval(function() {
-    if (didScroll) {
-        hasScrolled();
-        didScroll = false;
-    }
-}, 250);
-
-function hasScrolled() {
-    var st = $('section').scrollTop();
-    
-    // Make sure they scroll more than delta
-    if(Math.abs(lastScrollTop - st) <= delta)
-        return;
-    
-    // If they scrolled down and are past the navbar, add class .nav-up.
-    // This is necessary so you never see what is "behind" the navbar.
-    if (st > lastScrollTop && st > navbarHeight){
-        // Scroll Down
-        $('header').removeClass('nav-down').addClass('nav-up');
-    } else {
-        // Scroll Up
-        if(st + $(window).height() < $(document).height()) {
+            <script>
+            var didScroll;
+            var lastScrollTop = 0;
+            var delta = 5;
+            var navbarHeight = $('header').outerHeight();
+            $(window).scroll(function(event){
+            didScroll = true;
+            });
+            setInterval(function() {
+            if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+            }
+            }, 250);
+            function hasScrolled() {
+            var st = $('section').scrollTop();
+            
+            // Make sure they scroll more than delta
+            if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+            
+            // If they scrolled down and are past the navbar, add class .nav-up.
+            // This is necessary so you never see what is "behind" the navbar.
+            if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('header').removeClass('nav-down').addClass('nav-up');
+            } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
             $('header').removeClass('nav-up').addClass('nav-down');
-        }
-    }
-    
-    lastScrollTop = st;
-}
-        </script>
+            }
+            }
+            
+            lastScrollTop = st;
+            }
+            </script>
+            <script>
+            $(document).ready(function() {
+            
+            $('#calendar').fullCalendar({
+            header: {
+            left: 'prev,next today',
+            center: 'title',
+            right: 'month,listYear'
+            },
+            listTime: false, // don't show the time column in list view
+            // THIS KEY WON'T WORK IN PRODUCTION!!!
+            // To make your own Google API key, follow the directions here:
+            // http://fullcalendar.io/docs/google_calendar/
+            googleCalendarApiKey: 'AIzaSyDcnW6WejpTOCffshGDDb4neIrXVUA1EAE',
+            
+            // US Holidays
+            events: 'en.usa#holiday@group.v.calendar.google.com',
+            
+            eventClick: function(event) {
+            // opens events in a popup window
+            window.open(event.url, 'gcalevent', 'width=700,height=600');
+            return false;
+            },
+            
+            loading: function(bool) {
+            $('#loading').toggle(bool);
+            }
+            
+            });
+            
+            });
+            </script>
         </head>
+
+
         <body>
             <div id="wrapper">
                 <header class="nav-down">
@@ -172,47 +205,101 @@ function hasScrolled() {
                             <div class="slide" id="section1">
                                 <div class="intro" data-anchor="slide1">
                                     <h1>Millan Music</h1>
-                                    <p>A fun and energetic environment for students to learn and develop their musical talent!</br></br></p>
-                                        
+                                    <p><b>A fun and energetic environment for students to learn and develop their musical talent!</br></br><b></p>
+                                    
                                     
                                     <div class="row">
                                         <div class="large-4 medium-4 columns">
                                             <div class="circle">
-                                            <i class="fa fa-users"></i>
-                                            <p>Over 300 Enrolled Students</p>
-                                            </div>
-                                        </div>
-
-                                        <div class="large-4 medium-4 columns">
-                                         <div class="circle">
-                                            <i class="fa fa-exchange"></i>
-                                            <p>13 Rooms for Music Instruction</p>
+                                                <i class="fa fa-users"></i>
+                                                <p>Over 300 Enrolled Students</p>
                                             </div>
                                         </div>
                                         <div class="large-4 medium-4 columns">
-                                        <div class="circle">
-                                        <i class="fa fa-music"></i>
-                                            <p>10 Instruments to Choose From</p>
+                                            <div class="circle">
+                                                <i class="fa fa-exchange"></i>
+                                                <p>13 Rooms for Music Instruction</p>
+                                            </div>
                                         </div>
+                                        <div class="large-4 medium-4 columns">
+                                            <div class="circle">
+                                                <i class="fa fa-music"></i>
+                                                <p>10 Instruments to Choose From</p>
+                                            </div>
                                         </div>
                                     </div>
-                                      <p style="text-align: center;"></br></br>  <b>$20 - $25 Per Lesson</b></br><b>30 Minute One-on-One Lessons</b></br> <b>Ages 5 to 99 Years Old</b> </br>
-                                           </br> We accept cash or check only.</br>Three waiting rooms (two with a TV), a playroom (complete with
-                                        toys) and free coffee, cappuccino, hot chocolate and tea.</p>
-
-
-
+                                    <p style="text-align: center;"></br></br>  <b>First Lesson Free</b></br><b>$20 - $25 / Lesson</b></br><b>Ages 5 - 99 Years Old</b></br><b>30 Minute One-on-One Lessons</b></br>
+                                        <!-- </br> We accept cash or check only.</br>Three waiting rooms (two with a TV), a playroom (complete with
+                                    toys) and free coffee, cappuccino, hot chocolate and tea.</p>-->
                                 </div>
                                 <div class="slide" id="section2">
                                     <div class="intro" data-anchor="slide2">
                                         <h1>Instructors</h1>
-                                        <p>Our patient and talented instructors are here to help the student every step of the way.</p>
+                                        <p>Our patient and talented instructors are here to help the student every step of the way.</br></p>
+                                        <ul id="instructors">
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>
+                                        <li>
+                                         <div class="pro-circle"></div>
+                                        </li>                      
+                                        </ul>
+
                                     </div>
                                 </div>
                                 <div class="slide" id="section3">
                                     <div class="intro" data-anchor="slide3">
-                                        <h1>Calendar</h1>
-                                        <p>Dates and stuff</p>
+                                       <!-- <h1>Calendar</h1> -->
+                                            <div id='loading'>loading...</div>
+                                            <div id='calendar'></div>
                                     </div>
                                 </div>
                                 <div class="slide" id="section4">
@@ -222,9 +309,10 @@ function hasScrolled() {
                                     </div>
                                 </div>
                                 <div class="slide" id="section5">
-                                    <div class="intro" data-anchor="slide5">
-                                        <h1>Contact</h1>
-                                        <p></br>(310) 522-9932</br></br>
+                                    <div class="intro contact" data-anchor="slide5">
+                                        <h1>Contact</br></h1>
+                                        <p></br>1(310) 522-9932</br></br></p>
+                                        <p>
                                             1330 E 223rd St Suite 524</br>
                                         Carson, CA 90745</br></br></p>
                                         <div class="row">
