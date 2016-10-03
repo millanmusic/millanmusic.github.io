@@ -79,7 +79,7 @@ section.module h4 {
   margin-top: 5px;
   letter-spacing: 2px;
   font-size: 20px;
-  font-weight: 100;
+  font-weight: 400;
   text-align: center;
   color: white;
 }
@@ -196,10 +196,32 @@ section.module.parallax.active h1 {
   background-color: #272727;
 }
 
+/**INSTRUCTOR CSS**/
 .instructor p{
   color: #404040;
 }
 
+.img-circle {
+  margin-top: 35px;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+}
+
+.portfolio h3 {
+  margin: 0 auto;
+  width:  50%;
+  letter-spacing: 2px;
+  font-family: 'QUICKSAND', sans-serif !important;
+  text-transform: uppercase;
+  font-weight: 400 !important;
+  border-bottom:  1px solid #939393;
+}
+.portfolio p{
+  color: #939393;
+  font-family: 'Raleway', sans-serif;
+}
+/******************/
 .abt .midcol p{
   font-size: 14px;
   line-height: 25px;
