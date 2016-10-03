@@ -377,6 +377,9 @@ padding-bottom: 50px;
 }
 
 @media screen and (max-width: 720px) {
+  section.module.parallax {
+    padding: 35px;
+  }
   section.module.parallax h1 {
-      font-size: 50px;
+      font-size: 35px;
   }
