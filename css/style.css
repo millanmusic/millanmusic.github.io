@@ -32,6 +32,10 @@
   background: transparent;
 }
 
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 
 @font-face {
     font-family: Interstate;
@@ -263,6 +267,7 @@ section.module.parallax.active h1 {
   width: 380px;
   height: 300px;
   text-align: left;
+  margin: 30px auto;
 }
 
 .quotebox img {
@@ -332,7 +337,6 @@ padding-bottom: 50px;
 
 
 
-@media all and (min-width: 960px) {
   section.module.parallax h1 {
     font-family: 'Quicksand', sans-serif;
     text-align: center;
@@ -341,6 +345,38 @@ padding-bottom: 50px;
     line-height: 90px;
     z-index: 0;
     font-size: 125px;
+    margin: 0 auto;
+    width: 60%;
     float: none;
   }
+
+@media screen and (max-width: 968px) {
+
+  .abt .leftcol p {
+    font-size: 30px;
+  }
+    .img-circle {
+      height: 130px;
+      width:  130px;
+    }
+
+    .info-bar ul {display: none;}
+    section.module.parallax h1 {
+      font-size: 90px;
+      line-height:  70px;
+    margin: 0 auto;
+    width: 90%;
+  }
+
+  .quotebox {
+    width: 80%;
+    height: 200px;
+    margin: 10px auto;
+  }
+  #nav {display: hidden !important}
 }
+
+@media screen and (max-width: 720px) {
+  section.module.parallax h1 {
+      font-size: 50px;
+  }
