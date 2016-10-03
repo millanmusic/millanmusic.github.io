@@ -123,16 +123,16 @@ section.module.parallax h1 {
     float: none;
 }
 section.module.parallax-1 {
-  background-image: url("../img/1.jpg");
+  background-image: url("../img/1.JPG");
 }
 section.module.parallax-2 {
-  background-image: url("../img/4.jpg");
+  background-image: url("../img/4.JPG");
 }
 section.module.parallax-3 {
-  background-image: url("../img/2.jpg");
+  background-image: url("../img/2.JPG");
 }
 section.module.parallax-4 {
-  background-image: url("../img/5.jpg");
+  background-image: url("../img/5.JPG");
   background-position: -500px;
 }
 
