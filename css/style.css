@@ -1,395 +1,324 @@
-@font-face {
-font-family: 'Mistral';
-font-style: normal;
-font-weight: normal;
-src: local('Mistral'), url('MISTRAL.woff') format('woff');
+::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
 }
-/* =Reset default browser CSS. Based on work by Eric Meyer: http://meyerweb.com/eric/tools/css/reset/index.html
--------------------------------------------------------------- */
-html, body, div, span, applet, object, iframe,
-h1, h2, h3, h4, h5, h6, p, blockquote, pre,
-a, abbr, acronym, address, big, cite, code,
-del, dfn, em, font, img, ins, kbd, q, s, samp,
-small, strike, strong, sub, sup, tt, var,
-b, u, i, center,
-dl, dt, dd, ol, ul, li,
-fieldset, form, label, legend,
-table, caption, tbody, tfoot, thead, tr, th, td {
+::-webkit-scrollbar-button {
+  width: 0px;
+  height: 0px;
+}
+::-webkit-scrollbar-thumb {
+  background: #ffffff;
+  border: 0px none #ffffff;
+  border-radius: 0px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #ffffff;
+}
+::-webkit-scrollbar-thumb:active {
+  background: #000000;
+}
+::-webkit-scrollbar-track {
+  background: rgba(102,102,102,0.5);
+  border: 0px none #ffffff;
+  border-radius: 93px;
+}
+::-webkit-scrollbar-track:hover {
+  background: #666666;
+}
+::-webkit-scrollbar-track:active {
+  background:   rgba(102,102,102,0.5);
+}
+::-webkit-scrollbar-corner {
   background: transparent;
-  border: 0;
-  margin: 0;
-  padding: 0;
-  vertical-align: baseline; }
+}
 
-body {
-  line-height: 1; }
 
-h1, h2, h3, h4, h5, h6 {
-  clear: both;
-  font-weight: normal; }
+@font-face {
+    font-family: Interstate;
+    src: url(/fontes/Interstate Thin.ttf);
+}
 
-ol, ul {
-  list-style: none; }
+@import 'https://fonts.googleapis.com/css?family=Raleway:100';
 
-blockquote {
-  quotes: none; }
+/* ============================================================
+  SECTIONS
+============================================================ */
+p {
+  font-family: Helvetica, sans-serif;
 
-blockquote:before, blockquote:after {
-  content: '';
-  content: none; }
-
-del {
-  text-decoration: line-through; }
-
-/* tables still need 'cellspacing="0"' in the markup */
-table {
-  border-collapse: collapse;
-  border-spacing: 0; }
-
-a img {
-  border: none; }
-
-/* =Scss Variables
--------------------------------------------------------------- */
-/* =Global
--------------------------------------------------------------- */
-*,
-*:before,
-*:after {
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
-  box-sizing: border-box; }
-
-body {
-  background-color: #3cb5f9;
-  color: #505050;
-  font-family: "Ubuntu", sans-serif;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 1.8; }
-
-/* Headings */
-h1, h2, h3, h4, h5, h6 {
-  line-height: 1;
-  font-weight: 300; }
-
-a {
-  text-decoration: none;
-  color: #3cb5f9; }
-
-a:hover {
-  color: #0793e2; }
-
-/* =Template
--------------------------------------------------------------- */
-#wrapper {
-  width: 100%;
-  margin: 0 auto; }
-
-#main {
-  background-color: #fff;
-  padding-top: 150px; }
-
-.container {
-  width: 80%;
+}
+section.module:last-child {
+  margin-bottom: 0;
+}
+section.module h2 {
+  width:  60%;
   margin: 0 auto;
-  padding: 0 30px; }
-
-section {
-  padding: 60px 0; 
-  text-align: center;}
-  section h1 {
-    margin-top: 300px;
-    font-weight: 700;
-    margin-bottom: 10px; 
-  text-align: center;}
-  section p {
-    margin-bottom: 30px; 
-    padding-bottom: 0px;}
-    section p:last-child {
-      margin-bottom: 0; }
-  section.color {
-    background-color: #3cb5f9;
-    color: white; }
-
-.intro {
-  text-align:  center;
-  overflow:  auto;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  font-weight: 500;
+  font-family: Helvetica, sans-serif;
+  font-size: 30px;
+  padding-top: 10px;
+  margin-bottom: 30px;
+  border-bottom: 1px solid #939393;
 }
 
-/* =Info Bar
--------------------------------------------------------------- */
-#info-bar {
-  background-color: #3cb5f9; }
-  #info-bar a {
-    color: white;
-    font-size: 14px;
-    text-transform: uppercase;
-    display: inline-block;
-    margin: 0;
-    padding: 10px; }
-    #info-bar a:hover {
-      background-color: #0793e2; }
-  #info-bar span.all-tutorials,
-  #info-bar span.back-to-tutorial {
-    display: block;
-    width: 50%; }
-  #info-bar span.all-tutorials {
-    float: left;
-    text-align: left; }
-  #info-bar span.back-to-tutorial {
-    float: right;
-    text-align: right; }
-
-/* =Header
--------------------------------------------------------------- */
-header {
-  width: 100%;
-  height: 60px;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 999;
-  background-color: rgba(255,255,255,0.95);
-  transition: top 0.2s ease-in-out;
-      box-shadow: 0px 5px 5px #888888;
-  -webkit-transition: height 0.3s;
-  -moz-transition: height 0.3s;
-  -ms-transition: height 0.3s;
-  -o-transition: height 0.3s;
-  transition: height 0.3s; }
-  header h1#logo {
-    display: inline-block;
-    float: left;
-    font-family: "Mistral", sans-serif;
-    font-size: 40px;
-    margin-top:  10px;
-    color: black;
-    font-weight: 400;
-    text-shadow:  2px 1px #DCDCDC;
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -ms-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s; }
-  header h1#logo:hover {
-    text-shadow:  5px 1px #DCDCDC;
-    cursor: initial;
-  }
-  header nav {
-    display: inline-block;
-    float: right; }
-    header nav a {
-      line-height: 60px;
-      margin-left: 20px;
-      color: #A9A9A9;
-      font-weight: 700;
-      font-size: 18px;
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -ms-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s; }
-      header nav a:hover {
-        color: black; 
-      }
-
- .nav-up {
-  top: -60px;
- }     
-.intro {
-  margin:  0 auto;
-  width:  80%;
-}
-.section h1 {
-   font-family: "Mistral", sans-serif;
-   color:  rgba(255,255,255,0.95);
-   margin-top: 20px;
-   font-size:  7em;
-   text-shadow:  2px 2px black;
-}
-.section p {
-  color:  white;
-  font-size: 1.3em;
-  text-shadow:  1px 1px black;
-}
-#section1 {
-  background-size: cover;
-  z-index: 980;
-  background-image: url(../img/4.JPG);
-  filter:blur(2px);
-}
-#section2 {
-  background-size: cover;
-  z-index: 981;
-  background-image: url(../img/1.JPG);
-  filter:blur(2px);
-}
-#section3 {
-  background-size: cover;
-  z-index: 982;
-  background-image: url(../img/2.JPG);
-  filter:blur(2px);
-}
-
-#section4 {
-  background-size: cover;
-  z-index: 983;
-  background-image: url(../img/5.JPG);
-  filter:blur(2px);
-}
-#section5 {
-  background-size: cover;
-  z-index: 984;
-  background-image: url(../img/3.JPG);
-  filter:blur(2px);
-}
-
-
-.row .fa{
-  margin:  0 auto;
+section.module h3 {
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  font-size: 30px;
+  font-weight: 100;
   text-align: center;
   color: white;
-  font-size:  50px;
-  text-shadow:  1px 1px black;
 }
 
-.contact .fa {
-  color:  white;
-  font-size:  30px;
-  text-shadow:  1px 1px black;
-
+section.module h4 {
+  font-family: 'Quicksand', sans-serif;
+  margin-top: 5px;
+  letter-spacing: 2px;
+  font-size: 20px;
+  font-weight: 100;
+  text-align: center;
+  color: white;
 }
-.large-4 {
+
+section.module h5 {
+  color: #d3d3d3;
+  letter-spacing: 1px;
+  font-size: 16px;
+  font-weight: 300;
+  margin-top: -20px;
+  margin-bottom: 60px;
+}
+section.module p {
+    text-align: center;
+  margin-bottom: 40px;
+  font-size: 16px;
+  font-weight: 300;
+}
+section.module p:last-child {
+  margin-bottom: 0;
+}
+section.module.content {
+  padding-top: 30px;
+  padding-bottom: 65px;
+  color: white;
+  background-color: #272727;
+}
+section.module.parallax {
+  padding: 120px 0;
+  background-position: 0 0;
+  background-color: #a9a9a9;
+}
+section.module.parallax h1 {
+   font-family: 'Raleway', sans-serif;
+    text-align: center;
+    color: #FFF;
+    font-weight: normal;
+    line-height: 100px;
+    z-index: 0;
+    font-size: 125px;
+    float: none;
+}
+section.module.parallax-1 {
+  background-image: url("../img/1.jpg");
+}
+section.module.parallax-2 {
+  background-image: url("../img/4.jpg");
+}
+section.module.parallax-3 {
+  background-image: url("../img/2.jpg");
+}
+section.module.parallax-4 {
+  background-image: url("../img/5.jpg");
+  background-position: -500px;
+}
+
+/* ============================================================
+  TEXT LEVEL SEMANTICS
+============================================================ */
+a {
+  text-decoration: none;
+  color: #1e1e1e;
+}
+
+a:hover {
+  color: black;
+}
+
+.hideme
+{   letter-spacing: 12px;
+    opacity:0;
+}
+
+  section.module h2 {
+    font-size: 42px;
+  }
+  section.module p {
+    font-size: 20px;
+  }
+  section.module.parallax {
+    padding: 180px 0;
+  }
+  section.module.parallax h1 {
+    width:  60%;
+    margin: 0 auto;
+   font-family: 'Quicksand', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 5px;
+    color: #FFF;
+    line-height: 100px;
+    z-index: 0;
+    font-size: 100px;
+    float: none;
+    padding-bottom:20px;
+    border-bottom: 1px solid white;
+  }
+section.module.parallax.active h1 {
+    letter-spacing: 11px;
+  }
+  .cal .abt .midcol p {
+    font-size:  16px;
   text-align:  center;
+  margin-bottom: 25px;
+}
+  .columns {
   margin: 0 auto;
 }
-
-.circle {
-  border-radius: 50%;
-  width:220px;
-  height:  220px;
-    background: rgba(0,0,0,0.8);
-    margin:  0 auto;
-    border: 5px solid white ;
-}
-
-.pro-circle {
-  width:150px;
-  height:  150px;
-  float:  left;
-    background: rgba(0,0,0,0.8);
-    border: 5px solid white ;
-}
-
-
-.circle i {
-  padding-top: 50px;
-}
-
-.columns {
+#about {
+  color: white;
+  width: 100%;
+  height: 100%;
   text-align:  center;
+  background-color: #272727;
 }
-/* Instructors
--------------------------------------------------------------- */
-.post-container {
-    margin: 20px 20px 0 0;  
-    border: 5px solid #333;
-    overflow: auto
+
+.instructor p{
+  color: #404040;
 }
-.post-thumb {
-    float: left
+
+.abt .midcol p{
+  font-size: 14px;
+  line-height: 25px;
+  color: #939393;
+  text-align: left;
 }
-.post-thumb img {
-    display: block
+
+.rtcol {
+      letter-spacing: 1px;
+    font-size: 16px;
+  text-align: left;
 }
-.post-content {
-    margin-left: 210px
+
+.rtcol p {
+  text-align: left !important;
+  font-size: 18px  !important;
+  margin-bottom: 20px !important;
 }
-.post-title {
-    font-weight: bold;
-    font-size: 200%
+
+.rtcol ul li {
+  color: #939393;
+}
+.rtcol img {
+  margin: 0 auto;
+  margin-right: 5px;
+}
+
+.abt .leftcol p{
+  margin-top: -10px;
+  font-size: 40px;
+  text-align: right;
+}
+
+/*QUOTE STYLING*/
+.quotebox {
+  position: relative;
+  background: rgba(255,255,255, 0.8);
+  border-radius: 10px;
+  width: 380px;
+  height: 300px;
+  text-align: left;
+}
+
+.quotebox img {
+  float: left;
+  padding-top: 20px;
+  padding-left: 20px;
+  height: 60px;
+  width: 60px;
+  display: inline-block;
+}
+.quotebox p {
+  text-indent: 20px;
+  padding-top: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-bottom: 10px !important;
+  font-size: 16px !important;
+  font-family: 'Raleway';
+  text-align: left !important;
+  font-weight: 400 !important;
+  display: inline-block !important;
+  color: black;
+}
+
+.quotebox .signature {
+  letter-spacing:  1px;
+  position:  absolute;
+    font-size: 16px !important;
+  font-family: 'Raleway';
+  bottom: 20px;
+  right: 20px;
+  font-weight: bold;
+  color:  black;
+  font-size:  20px;
+  text-align: right;
+}
+/*FOOTER STYLING*/
+footer {
+  border-top: 2px solid #333;
+}
+
+.contact {
+padding-top: 50px;
+padding-bottom: 50px;
 }
 
 
 
-/* Calendar 
--------------------------------------------------------------- */
-#calendar {
-    max-width: 900px;
-    margin: 0 auto;
-  }
-
-#calendar h2 {
-      font-family: "Mistral", sans-serif;
-      font-size:  3em;
-  color:  white;
-    text-shadow:  1px 1px black;
-
+.contact p {
+  margin-top: 10px;
+      font-family: Helvetica, sans-serif;
+      font-weight: 500;
+      letter-spacing:  2px;
+  font-size: 16px;
+  color: #d3d3d3;
 }
 
-table tbody {
-  background-color:rgba(254,254,254,0.6);
+.contact img {
+  margin: 0 10px;
+}
+.contact.dark {
+  background-color: #333;
+  padding-top: 30px;
+  padding-bottom:55px; 
+  height:  240px;
 }
 
-td.fc-day-top.fc-thu-.fc-past {
-  background-color: rgba(254,254,254,0.6);
-}
-/* =Footer
--------------------------------------------------------------- */
-/* =Extras
--------------------------------------------------------------- */
-.clearfix:after {
-  visibility: hidden;
-  display: block;
-  content: "";
-  clear: both;
-  height: 0; }
 
-/* =Media Queries
--------------------------------------------------------------- */
-@media all and (max-width: 660px) {
-  /* =Header
-  -------------------------------------------------------------- */
-  header h1#logo {
-    display: block;
-    float: none;
-    margin: 0 auto;
-    height: 100px;
-    line-height: 100px;
-    text-align: center; }
-  header nav {
-    display: block;
-    float: none;
-    height: 50px;
+
+@media all and (min-width: 960px) {
+  section.module.parallax h1 {
+    font-family: 'Quicksand', sans-serif;
     text-align: center;
-    margin: 0 auto; }
-    header nav a {
-      line-height: 50px;
-      margin: 0 10px; }
-  header.smaller {
-    height: 75px; }
-    header.smaller h1#logo {
-      height: 40px;
-      line-height: 40px;
-      font-size: 30px; }
-    header.smaller nav {
-      height: 35px; }
-      header.smaller nav a {
-        line-height: 35px; } }
-@media all and (max-width: 600px) {
-  .container {
-    width: 100%; }
-
-  #info-bar a {
-    display: block; }
-  #info-bar span.all-tutorials,
-  #info-bar span.back-to-tutorial {
-    width: 100%; }
-  #info-bar span.all-tutorials,
-  #info-bar span.back-to-tutorial {
+    color: #FFF;
+    font-weight: normal;
+    line-height: 90px;
+    z-index: 0;
+    font-size: 125px;
     float: none;
-    text-align: center; }
-  #info-bar span.all-tutorials {
-    border-bottom: solid 1px #0793e2; } }
+  }
+}

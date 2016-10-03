@@ -1,0 +1,235 @@
+/* ============================================================
+  RESET - http://meyerweb.com/eric/tools/css/reset/
+============================================================ */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* ============================================================
+  BOX SIZING & CLEARFIX
+============================================================ */
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.clearfix:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* ============================================================
+  HTML & BODY
+============================================================ */
+body {
+  background-color: #1e1e1e;
+  color: #505050;
+  font-family: "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* ============================================================
+  PRIMARY STRUCTURE
+============================================================ */
+.wrapper {
+  width: 100%;
+  margin: 0 auto;
+}
+
+main {
+  display: block;
+  background-color: #fff;
+}
+
+.container {
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 10px;
+}
+
+/* ============================================================
+  INFO BAR
+============================================================ */
+.info-bar {
+  width:  100%;
+  height: 65px;
+  line-height: 65px;
+  background-color: none;
+  text-align: center;
+  position: fixed;
+  top: 0;
+  color:  black;
+    -webkit-transition: background-color 400ms linear;
+    -moz-transition: background-color 400ms linear;
+    -o-transition: background-color 400ms linear;
+    -ms-transition: background-color 400ms linear;
+    transition: background-color 400ms linear;
+}
+
+.info-bar ul {
+  list-style: none;
+  margin:  0 auto;
+}
+
+.info-bar ul li {
+  display:  inline-block;
+  margin: 0 auto;
+}
+.info-bar a {letter-spacing:  1px;
+  text-align: right;
+  color: white;
+  font-size: 1rem;
+  padding-left: 15px;
+  padding-right: 10px;
+  font-weight: 300;
+}
+
+
+.logo a{
+  opacity: 0;
+  font-size: 2.4rem;
+  color: black;
+  font-family: 'Quicksand', sans serif;
+     -webkit-transition: opacity 400ms linear;
+    -moz-transition: opacity 400ms linear;
+    -o-transition: opacity 400ms linear;
+    -ms-transition: opacity 400ms linear;
+    transition: opacity 400ms linear;
+}
+
+.info-bar.active {
+  color: white;
+    background: #3d3d3d;
+    -webkit-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    -moz-box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.25);
+}
+.info-bar a.active{
+  color: white;
+  text-shadow: none;
+}
+
+.info-bar.end a:hover,.info-bar .end a.active:hover {
+  color: #e96656;
+}
+
+.logo a.active {
+  color:  white;
+  opacity: 1;
+   text-shadow: none;
+}
+
+.container.active{
+  opacity: 0;
+}
+
+.columns {
+  color: white;
+  text-align:  center;
+}
+
+.nav {
+  text-align: right;
+}
+
+.nav ul li a{
+     font-family: 'Raleway', sans-serif;
+  color: white;
+  font-weight: 500;
+}
+
+.nav ul li a.highlight{
+   color: #e96656;
+}
+
+.title {
+  opacity: 1;
+         -webkit-transition: opacity 700ms linear;
+    -moz-transition: opacity 700ms linear;
+    -o-transition: opacity 700ms linear;
+    -ms-transition: opacity 700ms linear;
+    transition: opacity 700ms linear;
+}
+
+.title.active {
+  opacity: 0;
+}
+
+/* ============================================================
+  FOOTER
+============================================================ */
+footer {
+  background-color: #272727;
+  height:  240px;
+}
+
+@media all and (min-width: 600px) {
+  footer aside {
+    float: left;
+    width: 33.3333%;
+  }
+  footer nav ul {
+    text-align: left;
+  }
+  footer nav li {
+    display: block;
+  }
+  footer nav a {
+    display: inline-block;
+    margin: 0;
+  }
+  footer .logo {
+    text-align: right;
+  }
+}
