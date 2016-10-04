@@ -497,3 +497,120 @@ padding-bottom: 50px;
       padding-bottom: 10px;
     }
 }
+
+@media only screen and (min-device-width : 320px) and (max-device-width : 667px) {
+    #home h1 {
+      font-size: 1.8rem;
+    }
+    section.module.parallax {
+        padding: 30px 0;
+    }
+
+    section.module.parallax h1 {
+        font-size: 2rem;
+        padding-bottom: 0;
+        height: auto;
+        height: 70px;
+        width: 100%;
+    }
+
+    section.module h3 {
+      font-size:  1rem;
+      margin-top: 0px;
+      padding-bottom: 10px;
+    }
+
+    section.module h2 {
+      font-size: 1.2rem;
+      margin-bottom: 20px;
+    }
+
+    section.module h4 {
+      font-size: 1rem;
+      padding-bottom: 20px;
+    }
+    section.module h5 {
+      padding-top: 5px;
+      font-size: 0.8rem;
+      margin-bottom: 20px;
+
+    }
+    .abt .leftcol p{
+      display: none;
+      font-size: 1rem;
+      text-align: center;
+      padding:  15px 0;
+    }
+
+    .rtcol p {
+      padding-top: 10px;
+      text-align: center !important;
+    }
+    .abt .rtcol{
+      text-align: center;
+    }
+
+    section.module.content {
+      padding: 25px 0;
+
+    }
+
+    .img-circle {
+    height: 70px;
+    width: 70px;
+    }
+
+    .portfolio h3 {
+      width: 100%;
+      padding-bottom: 2px !important;
+    }
+    .portfolio p {
+      font-size: 0.8rem !important;
+    }
+
+    .midcol h4 {
+      padding-bottom: 0px !important;
+    }
+    .quotebox {
+      width: 100%;
+    }
+
+    .quotebox img {
+      height: 40px;
+      width: 40px;
+    }
+
+    .quotebox p {
+      padding-top: 0px;
+      font-size: 0.8rem !important;
+    }
+
+    .quotebox .signature {
+      font-size: 0.9rem !important;
+      bottom: 2px;
+    }
+
+    footer {
+      height: 320px !important;
+    }
+    .contact {
+      padding-top: 10px;
+      padding-bottom: 20px;
+    }
+
+    .contact img {
+        height: 25px;
+        width: 25px;
+        margin: 5px;
+    }
+    .contact p {
+      margin-top: 0px;
+      font-size: 0.9rem;
+    }
+
+    .contact.dark {
+      height: 160px;
+      padding-top: 10px;
+      padding-bottom: 10px;
+    }
+}
