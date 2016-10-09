@@ -685,8 +685,8 @@ padding-bottom: 50px;
     }
 
     .img-circle {
-    height: 70px;
-    width: 70px;
+    height: 90px;
+    width: 90px;
     }
 
     .portfolio h3 {
@@ -701,9 +701,9 @@ padding-bottom: 50px;
       padding-bottom: 0px !important;
     }
     .quotebox {
-      height: 150px;
+      height: auto;
       width: 85%;
-      padding-bottom: 15px;      
+      padding-bottom: 25px;      
       margin: 10px auto;
 
     }
