@@ -685,8 +685,9 @@ padding-bottom: 50px;
     }
 
     .img-circle {
-    height: 90px;
-    width: 90px;
+    height: 85px;
+    width: 85px;
+    margin-top: 15px;
     }
 
     .portfolio h3 {
